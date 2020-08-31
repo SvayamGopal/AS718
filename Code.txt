@@ -1,0 +1,81 @@
+import re
+
+#Data Type
+ 
+txt1  = input("Enter a data type: ")
+ 
+String = re.match('^".*"$',txt1)
+Int1 = re.match('^([0-9]|[1-9][0-9]|[0-9][0-9][0-9])$',txt1)
+List1 = re.match('^\[\'.*\'\]$',txt1)
+Set1 = re.match('^\{\'.*\'\}$',txt1)
+Tuple1 = re.match('^\(\'.*\'\)$',txt1)
+Complex1 = re.match(r'^(\d\+\di$|^i\+\d)$',txt1)
+Comment = re.match(r"\#.*|^\'\'\'.*\'\'\'$",txt1)
+Variable = re.match(r'[a-zA-Z].*\d|[a-zA-Z].*',txt1)
+ 
+if String :
+    print('\nData type is: String')
+elif Int1:
+   print('\nData type is: Integer')
+elif List1:
+    print('\nData type is: List')
+elif Set1:
+    print('\nData type is: Set')
+elif Tuple1:
+    print('\nData type is: Tuple')
+elif Complex1:
+    print('\nData type is: Complex')
+elif Comment:
+    print('\nData type is: Comment')
+elif Variable:
+    print('\nData type is: Variable')
+else:
+    print('\nInvalid Data Type')
+ 
+#Operator
+ 
+txt2  = input("Enter an operator: ")
+ 
+mult = re.match(r'^\*$',txt2)
+add = re.match(r'^\+$',txt2)
+sub = re.match(r'^-$',txt2)
+div = re.match(r'^\/$',txt2)
+mod = re.match(r'^%$',txt2)
+quo = re.match(r'^//$',txt2)
+exp = re.match(r'^\**$',txt2)
+eq = re.match(r'^=$',txt2)
+neq = re.match(r'^\^=$',txt2)
+gt = re.match(r'^>$',txt2)
+lt = re.match(r'^<$',txt2)
+ge = re.match(r'^>=$',txt2)
+le = re.match(r'^<=$',txt2)
+ 
+ 
+if mult:
+    print('\nOperator is: Multiplication')
+elif add:
+    print('\nOperator is: Addition')
+elif sub:
+    print('\nOperator is: Subtraction')
+elif div:
+    print('\nOperator is: Division')
+elif mod:
+    print('\nOperator is: Modulus')
+elif quo:
+    print('\nOperator is: Quotient')
+elif exp:
+    print('\nOperator is: Exponent')
+elif eq:
+    print('\nOperator is: Equal to')
+elif neq:
+    print('\nOperator is: Not Equal to')
+elif gt:
+    print('\nOperator is: Greater than')
+elif lt:
+    print('\nOperator is: Lesser than')
+elif ge:
+    print('\nOperator is: Greater than or equal to')
+elif le:
+    print('\nOperator is: Lesser than or equal to')
+else:
+    print('\nInvalid Operator')
